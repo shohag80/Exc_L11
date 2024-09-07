@@ -7,10 +7,12 @@ use Livewire\Component;
 
 class Users extends Component
 {
+    public $search = '';
+
     public function render()
     {
         return view('livewire.users', [
-            'users' => User::search($this->search)->get(),
+            'users' => User::search($this->search)->paginate(10),
         ]);
     }
 }
