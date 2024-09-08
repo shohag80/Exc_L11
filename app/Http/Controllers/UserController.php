@@ -13,14 +13,13 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $page = $request->input('page', 1); // current page or load more page number
-        $perPage = 20; // number of records per page
-        
+
         $data = User::orderBy('created_at', 'desc')
-                    ->paginate($perPage, ['*'], 'page', $page);
+                    ->paginate(10, ['*'], 'page', $page);
 
         // If the request is AJAX, return partial data for loading more
         if ($request->ajax()) {
-            return view('partials.data-list', compact('data'))->render();
+            return view('pages.data-list', compact('data'))->render();
         }
 
         // For regular non-AJAX requests, return the full view

@@ -9,15 +9,14 @@ use Illuminate\Support\Facades\Route;
 
 // -------------------frontend-------------------
 Route::get('/', [HomeController::class, 'index'])->name('Home');
-
-
-Route::get('/count', Count::class);
-Route::get('/users', Users::class);
-Route::get('/numToword', NumberToWord::class)->name('numberToword');
 Route::get('/load-more-data', [UserController::class, 'index'])->name('load-more-data');
 
 
 
+
+
 // -------------------livewire-------------------
-Route::get('/count', Count::class);
+Route::get('/count', Count::class)->name('count');
+Route::get('/users', Users::class)->name('users');
+Route::get('/numToword', NumberToWord::class)->name('numberToword');
 

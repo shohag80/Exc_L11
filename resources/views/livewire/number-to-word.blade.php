@@ -1,5 +1,5 @@
 <div>
-    <div class="container text-center mt-5">
+    <div class="container bg-white rounded-lg p-4 text-center mt-5">
         <h3 class="text-success fw-bold">Number to Word</h3>
         <hr />
         <div class="col-6 offset-3 mb-3 row">

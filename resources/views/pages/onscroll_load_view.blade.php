@@ -1,9 +1,9 @@
 @extends('master')
 
 @section('content')
-    <div class="container" id="dataContainer">
-        <h1 class="text-center">Scroll Loader</h1>
-        @include('partials.data-list', ['data' => $data])
+    <div class="container bg-white col-md-4 offset-md-4 p-3 rounded-lg mt-5" id="dataContainer">
+        <h1 class="text-center text-3xl text-black underline underline-offset-8 font-serif">Scroll Loader</h1>
+        @include('pages.data-list', ['data' => $data])
     </div>
 
     <!-- Scroll Trigger for AJAX Load More -->

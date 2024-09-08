@@ -1,5 +1,5 @@
 <div>
-    <div class="container mt-5">
+    <div class="container bg-white p-4 rounded-lg mt-5">
         <h3 class="mb-3">User List</h3>
         <table class="table table-hover text-center">
             <thead>
