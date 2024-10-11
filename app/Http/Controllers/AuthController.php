@@ -20,8 +20,6 @@ class AuthController extends Controller
 
     public function registration_processing(Request $request)
     {
-        // dd($request->all());
-        // validation
         $validation = Validator::make($request->all(), [
             'name'          => 'required|string|max:255',
             'phone_number'  => 'required|string|max:15|unique:users,phone_number',
@@ -29,12 +27,13 @@ class AuthController extends Controller
             'password'      => 'required|string|min:8|confirmed',
         ]);
 
-        // error handl
+        // error handle
         if ($validation->fails()) {
             notify()->error('Sorry! Registration Faild, Please enter your valid Information.');
             return redirect()->back()->withErrors($validation)->withInput();
         }
 
+        // Inser User Information
         User::create([
             'name'          => $request->name,
             'email'         => $request->email,
@@ -63,12 +62,12 @@ class AuthController extends Controller
         // validation
         $validation = Validator::make($request->all(), [
             'email'         => 'required|email',
-            'password'      => 'required',
+            'password'      => 'required|min:8',
         ]);
 
         // error handle
         if ($validation->fails()) {
-            notify()->error('Sorry! Login Faild, Please enter your valid username and password.');
+            notify()->error('Sorry! Please enter your valid email and password.');
             return redirect()->back()->withErrors($validation)->withInput();
         }
 
@@ -82,8 +81,8 @@ class AuthController extends Controller
         }
 
         // redirect login page
-        notify()->error('Sorry! Login Faild, Please try again.');
-        return redirect()->back();
+        notify()->error('Sorry! Login Faild, Please enter your valid email and password.');
+        return redirect()->back()->withErrors($validation)->withInput();
     }
 
     /**
