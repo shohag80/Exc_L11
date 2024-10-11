@@ -9,6 +9,8 @@ use App\Livewire\Count;
 use Illuminate\Support\Facades\Route;
 
 // -------------------Auth-------------------
+Route::get('/registration', [AuthController::class, 'registration'])->name('registration');
+Route::post('/registration', [AuthController::class, 'registration_processing'])->name('registration');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'processing'])->name('login');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

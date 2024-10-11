@@ -17,6 +17,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Md. Shohag Hossain',
             'email' => 'user@gmail.com',
             'password' => bcrypt('123456'),
+            'phone_number' => '01975134226',
         ]);
     }
 }

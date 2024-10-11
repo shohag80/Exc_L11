@@ -1,10 +1,10 @@
 <div>
     <div class="container bg-white p-4 rounded-lg mt-5">
-        <h3 class="mb-3">User List</h3>
+        <h3 class="mb-3 text-danger">User List With Search</h3>
         <table class="table table-hover text-center">
             <thead>
                 <tr colspan="4">
-                    User search
+                    <span class="text-dark">Search User</span>
                     <input wire:model.live="search" type="text" class="form-control">
                 </tr>
                 <tr>

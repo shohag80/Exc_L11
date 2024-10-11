@@ -884,3 +884,22 @@ video {
         --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity))
     }
 }
+
+/* For Chrome, Safari, and Edge */
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox */
+.no-spinner {
+    -moz-appearance: textfield;
+}
+
+/* Optional: to remove the default styling */
+.no-spinner {
+    outline: none;
+    border: none;
+    background: none;
+}

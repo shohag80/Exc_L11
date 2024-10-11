@@ -19,7 +19,6 @@
             z-index: 1;
         }
     </style>
-    <link rel="stylesheet" href="{{ url('/assets/css/login.css') }}">
 
     <!-- script -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,17 +29,13 @@
         <img id="background" class="fixed top-0 max-w-[2000px]"
             src="https://laravel.com/assets/img/welcome/background.svg" />
         <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-            <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
+            <div class="relative w-full max-w-2xl lg:max-w-7xl">
 
                 <x-notify::notify />
-
-                @include('partials.header')
 
                 <main class="mt-2">
                     @yield('content')
                 </main>
-
-                @include('partials.footer')
 
             </div>
         </div>
